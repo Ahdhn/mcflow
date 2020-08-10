@@ -11,8 +11,10 @@ INCLUDE_DIRECTORIES(
   /usr/local/include
   ${PROJECT_ROOT}/include/
   ${CMAKE_SOURCE_DIR}
-  ./	
+  ./
+  ${PROJECT_ROOT}/gmm-5.4/bin/include
 )
+
 
 
 LINK_DIRECTORIES(
@@ -26,13 +28,13 @@ LINK_DIRECTORIES(
 
 LINK_LIBRARIES( m pthread ${Boost_LIBRARIES}
   OpenMeshCore OpenMeshTools 
-  taucs
-  gfortran
+  #taucs
+  #gfortran
   cblas
   lapack
   metis
   )
-              
+            
 ADD_EXECUTABLE( apply_mc_flow ${MCFLOW_SRCS} )
 
-ADD_EXECUTABLE( apply_mc_flow_cholesky ${MCFLOW_CHOLESKY_SRCS} )
+#ADD_EXECUTABLE( apply_mc_flow_cholesky ${MCFLOW_CHOLESKY_SRCS} )

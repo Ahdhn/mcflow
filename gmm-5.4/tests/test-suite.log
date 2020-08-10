@@ -1,0 +1,59 @@
+===================================
+   gmm 5.4: tests/test-suite.log
+===================================
+
+# TOTAL: 1
+# PASS:  0
+# SKIP:  0
+# XFAIL: 0
+# FAIL:  1
+# XPASS: 0
+# ERROR: 0
+
+.. contents:: :depth: 2
+
+FAIL: make_gmm_test.pl
+======================
+
+Gmm tests : Making 1 execution of each test
+Testing  ./gmm_torture01_lusolve.cc
+Testing  ./gmm_torture02_baseop.cc
+Testing  ./gmm_torture05_mult.cc
+Testing  ./gmm_torture06_mat_mult.cc
+Testing  ./gmm_torture10_qr.cc
+Testing  ./gmm_torture15_sub.cc
+Testing  ./gmm_torture20_iterative_solvers.cc
+In file included from /usr/include/c++/7/bits/stl_iterator_base_types.h:67:0,
+                 from /usr/include/c++/7/iterator:61,
+                 from ./../include/gmm/gmm_ref.h:45,
+                 from ./../include/gmm/gmm_def.h:40,
+                 from ./../include/gmm/gmm_kernel.h:41,
+                 from ./../include/gmm/gmm.h:40,
+                 from auto_gmm_torture20_iterative_solvers.cc:3:
+/usr/include/c++/7/type_traits: In instantiation of ‘struct std::__or_<std::is_lvalue_reference<gmm::elt_rsvector_<float>*&&>, std::is_rvalue_reference<gmm::elt_rsvector_<float>*&&> >’:
+/usr/include/c++/7/type_traits:580:12:   required from ‘struct std::is_reference<gmm::elt_rsvector_<float>*&&>’
+/usr/include/c++/7/type_traits:120:12:   required from ‘struct std::__or_<std::is_reference<gmm::elt_rsvector_<float>*&&>, std::is_void<gmm::elt_rsvector_<float>*&&> >’
+/usr/include/c++/7/type_traits:125:12:   required from ‘struct std::__or_<std::is_function<gmm::elt_rsvector_<float>*&&>, std::is_reference<gmm::elt_rsvector_<float>*&&>, std::is_void<gmm::elt_rsvector_<float>*&&> >’
+/usr/include/c++/7/type_traits:154:31:   required from ‘struct std::__not_<std::__or_<std::is_function<gmm::elt_rsvector_<float>*&&>, std::is_reference<gmm::elt_rsvector_<float>*&&>, std::is_void<gmm::elt_rsvector_<float>*&&> > >’
+/usr/include/c++/7/type_traits:600:12:   required from ‘struct std::is_object<gmm::elt_rsvector_<float>*&&>’
+/usr/include/c++/7/type_traits:120:12:   [ skipping 29 instantiation contexts, use -ftemplate-backtrace-limit=0 to disable ]
+./../include/gmm/gmm_blas.h:217:29:   required from ‘void gmm::resize(M&, gmm::size_type, gmm::size_type, gmm::linalg_false) [with M = gmm::row_matrix<gmm::rsvector<float> >]’
+./../include/gmm/gmm_blas.h:232:11:   required from ‘void gmm::resize(M&, gmm::size_type, gmm::size_type) [with M = gmm::row_matrix<gmm::rsvector<float> >]’
+./../include/gmm/gmm_precond_ilut.h:124:18:   required from ‘void gmm::ilut_precond<Matrix>::build_with(const Matrix&, int, double) [with Matrix = gmm::dense_matrix<float>]’
+./../include/gmm/gmm_precond_ilut.h:131:31:   required from ‘gmm::ilut_precond<Matrix>::ilut_precond(const Matrix&, int, double) [with Matrix = gmm::dense_matrix<float>]’
+auto_gmm_torture20_iterative_solvers.cc:159:27:   required from ‘bool test_procedure(const MAT1&, const VECT1&, const VECT2&) [with MAT1 = gmm::dense_matrix<float>; VECT1 = std::vector<float, std::allocator<float> >; VECT2 = std::vector<float, std::allocator<float> >]’
+auto_gmm_torture20_iterative_solvers.cc:302:55:   required from here
+/usr/include/c++/7/type_traits:120:12: fatal error: template instantiation depth exceeds maximum of 40 (use -ftemplate-depth= to increase the maximum)
+     struct __or_<_B1, _B2>
+            ^~~~~~~~~~~~~~~
+compilation terminated.
+g++ -ftemplate-depth-40 -pedantic -O3 -Wall -W -Wshadow -Wpointer-arith -Wcast-qual -Wwrite-strings -Wconversion -Wredundant-decls -Wno-long-long -I./../src -I./../include -I../src -I../include auto_gmm_torture20_iterative_solvers.cc -o auto_gmm_torture20_iterative_solvers -lm
+
+******************************************************
+* Compilation error, please submit this bug to
+* Yves.Renard@insa-lyon.fr, with the file
+* auto_gmm_torture20_iterative_solvers.cc
+* produced in directory "tests".
+******************************************************
+FAIL make_gmm_test.pl (exit status: 1)
+

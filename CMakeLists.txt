@@ -1,4 +1,4 @@
-CMAKE_MINIMUM_REQUIRED( VERSION 2.6 )
+CMAKE_MINIMUM_REQUIRED( VERSION 3.15)
 SET( CMAKE_CXX_COMPILER g++ )
 SET( CMAKE_C_COMPILER gcc )
 
@@ -30,6 +30,12 @@ SET( EXECUTABLE_OUTPUT_PATH ${PROJECT_ROOT}/build/bin )
 
 #execute_process(COMMAND ${CMAKE_COMMAND} -E create_symlink ${CMAKE_SOURCE_DIR}/data
 #                                                           ${CMAKE_BINARY_DIR}/data )
+include(FetchContent)
+FetchContent_Declare(openmesh
+GIT_REPOSITORY https://www.graphics.rwth-aachen.de:9000/OpenMesh/OpenMesh.git
+GIT_TAG        OpenMesh-8.1
+)
+FetchContent_MakeAvailable(openmesh)
 
 SUBDIRS( src )
 
